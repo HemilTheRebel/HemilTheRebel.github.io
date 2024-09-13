@@ -1,0 +1,26 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Closed Listing</h2>
+    <ul>
+        
+        {% if not Existence %}
+           <h1> {{message}} </h1>
+        {% else %}
+            <h1>CONGRATULATIONS!! USER: {{user}} 
+                <br>
+                You have won the Auction for:
+            </h1>
+            <!-- If the listing is an active listing, only then show it -->
+            {% for x_listings in listings %}
+                <li>
+                    <a class="nav-link">{{x_listings.title}}</a>
+                    <img src= '{{x_listings.photo}}' alt= '{{x_listings.title}}'>
+                    
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+
+
+{% endblock %}
