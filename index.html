@@ -13,7 +13,7 @@
             <h1>Listenn.in</h1>
         </div>
         <div class="header-button">
-            <a href="#" class="button">Book a demo</a>
+            <a href="#contact-form" class="button">Book a demo</a>
         </div>
     </header>
 
@@ -27,18 +27,36 @@
         
         <!-- Buttons for action -->
         <div class="hero-buttons">
-            <a href="#" class="button-light">Watch Video</a>
-            <a href="#" class="button-dark">Book a demo</a>
+            <a href="#" class="button-light" id="Watch-Video">Watch Video</a>
+            <a href="#contact-form" class="button-dark">Book a demo</a>
         </div>
     
         <!-- Embedded YouTube Video -->
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/775D3kP6oRI"
+        <div class="video-container"  id="video-container">
+            <iframe id="my-video" width="560" height="315" src="https://www.youtube.com/embed/775D3kP6oRI"
                     title="YouTube video player" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
             </iframe>
         </div>
+
+        <!-- JavaScript to Autoplay the Video -->
+        <script>
+            document.getElementById("Watch-Video").addEventListener("click", function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                // Scroll to video container
+                document.getElementById("video-container").scrollIntoView({ behavior: "smooth" });
+                
+                // Change the iframe src to autoplay the video
+                var video = document.getElementById("my-video");
+                var videoSrc = video.src;
+                
+                // Append autoplay parameter to the video URL if not already present
+                if (!videoSrc.includes("autoplay=1")) {
+                    video.src = videoSrc + "?autoplay=1";
+                }
+            });
+        </script>
     </section>
     
 
@@ -75,7 +93,7 @@
                     drives sentiment and make data-driven<br>
                     decisions to enhance satisfaction and loyalty.
                 </p>
-                <a href="#" class="button-dark">Book a demo</a>
+                <a href="#contact-form" class="button-dark">Book a demo</a>
             </div>
     
             <!-- Right side: Images -->
@@ -131,8 +149,8 @@
 
 
     
-    <!-- Contact Form Section -->
-    <section class="contact">
+    <!-- Contact Form Section    -->
+    <section class="contact" id="contact-form">
         <!-- Left Side: Text -->
         <div class="contact-text">
             <div class="contact-icon">
@@ -144,13 +162,18 @@
         <!-- Right Side: Form -->
         <div class="contact-form">
             <form>
-                <label for="name">Name</label>
+                
+                <label for="name">Name</label><br>
                 <input type="text" id="name" name="name" placeholder="John Doe">
-                <label for="email">Email</label>
+                
+                <label for="email">Email</label><br>
                 <input type="email" id="email" name="email" placeholder="john@email.com">
-                <label for="phone">Phone</label>
+                    
+                <label for="phone">Phone</label><br>
                 <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+                
                 <button type="submit" class="button-dark">Book a demo</button>
+                
             </form>
         </div>
     </section>
