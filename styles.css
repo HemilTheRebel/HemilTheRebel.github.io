@@ -18,6 +18,7 @@ header {
 
 .logo h1 {
     font-size: 1.5rem;
+    color: #081830;
 }
 
 .header-button .button {
@@ -28,16 +29,17 @@ header {
     text-decoration: none;
     border-radius: 12px;
     gap: 10px;
+    font-weight: bold;
 }
 
 .hero {
     text-align: center;
-    padding: 40px 20px;
-    background-color: #f9f9f9;
+    padding-top:  40px;
 }
 
 /* Main Heading */
 .hero h2 {
+    padding-top: 24px;
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 10px;
@@ -46,10 +48,12 @@ header {
 
 /* Subtitle Text */
 .hero p {
+    padding: 24px;
     font-size: 1.25rem;
     color: #555;
     margin-bottom: 30px;
 }
+
 
 /* Button Container */
 /* Button Container */
@@ -492,7 +496,7 @@ footer {
 }
 
 .footer-links a {
-    color: #000000;
+    color: #081830;
     text-decoration: none;
     font-size: 1rem;
 }
